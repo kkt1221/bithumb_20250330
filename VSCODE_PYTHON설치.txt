@@ -1,0 +1,24 @@
+1. Python 최신버전 다운 설치
+- https://www.python.org/
+- 윈도우 검색 창 -> 시스템 환경 변수 편집을 검색 실행
+- 시스템 속성 창 ->  환경 변수를 클릭하자.
+- 시스템 변수 ->Path -> 편집
+- 새로 만들기 클릭 (Python, Scripts 폴더 추가)
+   D:\Python
+   D:\Python\Scripts
+2. Visual Studio Code 설치
+- https://code.visualstudio.com/
+- 확장(CTRL + SHIFT + X) 버튼을 눌러 Python과 Python Extension Pack 설치
+
+3. Python 인터프리터 설정
+-  Command Palette 열기: Ctrl+Shift+P
+   Python: Select Interpreter 입력 및 선택
+
+4. 소스 추가 후 패키지 추가
+python.exe -m pip install --upgrade pip
+pip install pyqt5
+pip install pyqt5-tools
+pip install requests
+pip install PyJWT
+pip install pandas
+pip install pyinstaller

@@ -1,0 +1,3 @@
+14c1e2ee6e15fb4130882829c27d2a7e317ac6fb11c5c2
+MGRkYzg2NzY4OGI1MDZiN2UyZWE2YTEwZmM0MzQ2ZjgyZTJjYzg3MzJmN2YzMDc4Y2ZmNzE1YzRjYjFmOA==
+pyinstaller -w -F -i="C:\workspace\bithumb_20250329\logo.ico" --add-data="logo.ico;./" --add-data="bithumb_home.txt;./" main.py
