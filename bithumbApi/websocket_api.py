@@ -39,7 +39,7 @@ class WebSocketManager(mp.Process):
         super().__init__()
 
     async def __connect_socket(self):
-        uri = "wss://api.upbit.com/websocket/v1"
+        uri = "wss://api.bithumb.com/websocket/v1"
         async with websockets.connect(uri, ping_interval=60) as websocket:
             data = [{"ticket": str(uuid.uuid4())[:6]}, {"type": self.type, "codes": self.codes}]
             await websocket.send(json.dumps(data))

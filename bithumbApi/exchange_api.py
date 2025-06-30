@@ -13,7 +13,7 @@ from bithumbApi.request_api import _send_get_request, _send_post_request, _send_
 logger = None
 
 # 원화 마켓 주문 가격 단위
-# https://docs.upbit.com/docs/market-info-trade-price-detail
+# https://docs.bithumb.com/docs/market-info-trade-price-detail
 def get_tick_size(price):
     if price >= 2000000:
         tick_size = round(price / 1000) * 1000
@@ -646,29 +646,29 @@ if __name__ == "__main__":
     balances = bithumb.get_order("KRW-XRP")
     pprint.pprint(balances)
 
-    # order = upbit.get_order('50e184b3-9b4f-4bb0-9c03-30318e3ff10a')
+    # order = bithumb.get_order('50e184b3-9b4f-4bb0-9c03-30318e3ff10a')
     # print(order)
     # # 원화 잔고 조회
-    # print(upbit.get_balance(ticker="KRW"))          # 보유 KRW
-    # print(upbit.get_amount('ALL'))                  # 총매수금액
-    # print(upbit.get_balance(ticker="KRW-BTC"))      # 비트코인 보유수량
-    # print(upbit.get_balance(ticker="KRW-XRP"))      # 리플 보유수량
+    # print(bithumb.get_balance(ticker="KRW"))          # 보유 KRW
+    # print(bithumb.get_amount('ALL'))                  # 총매수금액
+    # print(bithumb.get_balance(ticker="KRW-BTC"))      # 비트코인 보유수량
+    # print(bithumb.get_balance(ticker="KRW-XRP"))      # 리플 보유수량
 
-    #print(upbit.get_chance('KRW-HBAR'))
-    #print(upbit.get_order('KRW-BTC'))
+    #print(bithumb.get_chance('KRW-HBAR'))
+    #print(bithumb.get_order('KRW-BTC'))
 
     # 매도
-    # print(upbit.sell_limit_order("KRW-XRP", 1000, 20))
+    # print(bithumb.sell_limit_order("KRW-XRP", 1000, 20))
 
     # 매수
-    # print(upbit.buy_limit_order("KRW-XRP", 200, 20))
+    # print(bithumb.buy_limit_order("KRW-XRP", 200, 20))
 
     # 주문 취소
-    # print(upbit.cancel_order('82e211da-21f6-4355-9d76-83e7248e2c0c'))
+    # print(bithumb.cancel_order('82e211da-21f6-4355-9d76-83e7248e2c0c'))
 
     # 시장가 주문 테스트
-    # upbit.buy_market_order("KRW-XRP", 10000)
+    # bithumb.buy_market_order("KRW-XRP", 10000)
 
     # 시장가 매도 테스트
-    # upbit.sell_market_order("KRW-XRP", 36)
+    # bithumb.sell_market_order("KRW-XRP", 36)
 

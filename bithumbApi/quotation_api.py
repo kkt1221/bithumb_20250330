@@ -1,4 +1,4 @@
-# Upbit Quatation (시세 조회) API
+# bithumb Quatation (시세 조회) API
 import datetime
 import pandas as pd
 import time
@@ -38,7 +38,7 @@ def fetch_market(isDetails=False, limit_info=False):
     Returns:
         list, (dict): 마켓 목록 리스트, 요청 제한 정보 딕셔너리
     """
-    url = "https://api.upbit.com/v1/market/all"
+    url = "https://api.bithumb.com/v1/market/all"
 
     if isDetails:
         query_string = {"isDetails": "true"}
@@ -66,7 +66,7 @@ def get_tickersEng(fiat="ALL", limit_info=False):
     :return:
     """
     try:
-        url = "https://api.upbit.com/v1/market/all"
+        url = "https://api.bithumb.com/v1/market/all"
 
         # call REST API
         ret = _call_public_api(url)
@@ -141,29 +141,29 @@ def get_url_ohlcv(interval):
     :return: candle 조회에 사용되는 url
     """
     if interval in ["day", "days"]:
-        url = "https://api.upbit.com/v1/candles/days"
+        url = "https://api.bithumb.com/v1/candles/days"
     elif interval in ["minute1", "minutes1"]:
-        url = "https://api.upbit.com/v1/candles/minutes/1"
+        url = "https://api.bithumb.com/v1/candles/minutes/1"
     elif interval in ["minute3", "minutes3"]:
-        url = "https://api.upbit.com/v1/candles/minutes/3"
+        url = "https://api.bithumb.com/v1/candles/minutes/3"
     elif interval in ["minute5", "minutes5"]:
-        url = "https://api.upbit.com/v1/candles/minutes/5"
+        url = "https://api.bithumb.com/v1/candles/minutes/5"
     elif interval in ["minute10", "minutes10"]:
-        url = "https://api.upbit.com/v1/candles/minutes/10"
+        url = "https://api.bithumb.com/v1/candles/minutes/10"
     elif interval in ["minute15", "minutes15"]:
-        url = "https://api.upbit.com/v1/candles/minutes/15"
+        url = "https://api.bithumb.com/v1/candles/minutes/15"
     elif interval in ["minute30", "minutes30"]:
-        url = "https://api.upbit.com/v1/candles/minutes/30"
+        url = "https://api.bithumb.com/v1/candles/minutes/30"
     elif interval in ["minute60", "minutes60"]:
-        url = "https://api.upbit.com/v1/candles/minutes/60"
+        url = "https://api.bithumb.com/v1/candles/minutes/60"
     elif interval in ["minute240", "minutes240"]:
-        url = "https://api.upbit.com/v1/candles/minutes/240"
+        url = "https://api.bithumb.com/v1/candles/minutes/240"
     elif interval in ["week", "weeks"]:
-        url = "https://api.upbit.com/v1/candles/weeks"
+        url = "https://api.bithumb.com/v1/candles/weeks"
     elif interval in ["month", "months"]:
-        url = "https://api.upbit.com/v1/candles/months"
+        url = "https://api.bithumb.com/v1/candles/months"
     else:
-        url = "https://api.upbit.com/v1/candles/days"
+        url = "https://api.bithumb.com/v1/candles/days"
 
     return url
 
@@ -245,7 +245,8 @@ def get_current_price(ticker="KRW-BTC"):
     :return:
     """
     try:
-        url = "https://api.upbit.com/v1/ticker"
+        url = "https://api.bithumb.com/v1/ticker"
+
         contents = _call_public_api(url, markets=ticker)[0]
         if not contents:
             return None
@@ -271,7 +272,7 @@ def get_orderbook(tickers="KRW-BTC"):
     :return:
     '''
     try:
-        url = "https://api.upbit.com/v1/orderbook"
+        url = "https://api.bithumb.com/v1/orderbook"
         contents = _call_public_api(url, markets=tickers)[0]
         return contents
     except Exception as x:
@@ -286,7 +287,7 @@ if __name__ == "__main__":
     #         market_all, limit = fetch_market(isDetails=True, limit_info=True)
     # except TooManyRequests as e:
     #     print(e)
-    # except UpbitError as e:
+    # except BithumbError as e:
     #     print(e)
 
     # 모든 티커 목록 조회

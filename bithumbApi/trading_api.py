@@ -27,9 +27,9 @@ def getIpConfig():
     # ip = get("https://api.ipify.org").text
     # logger.info("My public IP address : " + ip)
     # if ip == ip_air:
-    #     fileName = "upbit_home.txt"
+    #     fileName = "bithumb_home.txt"
     # else:
-    #     fileName = "upbit_air.txt"
+    #     fileName = "bithumb_air.txt"
 
     return "bithumb_home.txt"
 
@@ -626,8 +626,8 @@ def speedTradingStart6():
 
                         time.sleep(1)
                         factor = 10 ** 8
-                        # 3만원 이하면 전액 매도
-                        if sellShare <= krw_price <= 30000:
+                        # 4만원 이하면 전액 매도
+                        if sellShare <= krw_price <= 40000:
                             #krw_price = math.floor((krw_price + 50) * factor) / factor
                             #bSellVolume = math.floor((krw_price / sellPrice) * factor) / factor
                             bSellVolume = btc_balance
@@ -674,8 +674,8 @@ def speedTradingStart6():
 
                         time.sleep(1)
                         factor = 10 ** 8
-                        # 3만원 이하면 전액 매수
-                        if sellShare <= krw_balance <= 30000:
+                        # 4만원 이하면 전액 매수
+                        if sellShare <= krw_balance <= 40000:
                             krw_balance = krw_balance * 0.9974
                             bBuyVolume = math.floor((krw_balance / buyPrice) * factor) / factor
                             logger.info("3만원 미만 매수 수량 : " + str(bBuyVolume))
